@@ -67,10 +67,13 @@ const formReducer = createSlice({
   initialState,
   name: 'userForm',
   reducers: {
-    some: (state) => {
-      return state;
+    inputValueChanged: (state, { payload }) => {
+      const { inputId } = payload;
+      const input = state.inputs.find((input) => input.id === inputId);
+      input.value = payload.value;
     },
   },
 });
 
 export default formReducer.reducer;
+export const { inputValueChanged } = formReducer.actions;

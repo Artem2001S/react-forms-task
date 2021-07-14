@@ -4,7 +4,7 @@ import Input from 'components/Input/Input';
 import Select from 'components/Select/Select';
 import classes from './Form.module.scss';
 
-const Form = ({ title, inputs, onSubmit }) => {
+const Form = ({ title, inputs, onSubmit, onInputChanged }) => {
   return (
     <div className={classes.FormContainer}>
       <div className={classes.Title}>{title}</div>
@@ -13,15 +13,23 @@ const Form = ({ title, inputs, onSubmit }) => {
           switch (input.inputType) {
             case 'textField':
               return (
-                <Input id={input.id} value={input.value} label={input.label} />
+                <Input
+                  key={input.id}
+                  id={input.id}
+                  onChange={onInputChanged}
+                  value={input.value}
+                  label={input.label}
+                />
               );
             case 'select':
               return (
                 <Select
+                  key={input.id}
                   id={input.id}
                   value={input.value}
                   values={input.values}
                   label={input.label}
+                  onChange={onInputChanged}
                 />
               );
             default:
