@@ -1,0 +1,15 @@
+@import 'scssVariables.scss';
+
+.Label {
+  color: $text-color-primary;
+}
+
+.Input {
+    @include defaultInputStyles();
+}
+
+.InputContainer {
+    display: block;
+
+    width: 100%;
+}

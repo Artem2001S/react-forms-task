@@ -2,12 +2,27 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   inputs: [
-    { id: 'name', type: 'text', label: 'Name', value: '' },
-    { id: 'phone', type: 'text', label: 'Phone number', value: '' },
-    { id: 'email', type: 'text', label: 'Email', value: '' },
+    {
+      id: 'name',
+      inputType: 'textField',
+      label: 'Name',
+      value: '',
+    },
+    {
+      id: 'phone',
+      inputType: 'textField',
+      label: 'Phone number',
+      value: '',
+    },
+    {
+      id: 'email',
+      inputType: 'textField',
+      label: 'Email',
+      value: '',
+    },
     {
       id: 'city',
-      type: 'select',
+      inputType: 'select',
       value: '',
       label: 'Choose city',
       values: [
@@ -21,8 +36,29 @@ const initialState = {
         'Another',
       ],
     },
-    { id: 'gender', type: 'radio', value: 'Male', values: ['Male', 'Female'] },
-    { id: 'dateOfBirth', type: 'date', label: 'Date of birth', value: '' },
+    { id: 'dateOfBirth', inputType: 'date', label: 'Date of birth', value: '' },
+    {
+      id: 'gender',
+      label: 'Choose gender',
+      inputType: 'radio',
+      value: 'Male',
+      values: ['Male', 'Female'],
+    },
+    {
+      id: 'skills',
+      inputType: 'checkbox',
+      label: 'Select your skills',
+      selectedValues: [],
+      values: [
+        'HTML',
+        'CSS',
+        'JavaScript',
+        'React',
+        'Angular',
+        'Vue',
+        'Svelte',
+      ],
+    },
   ],
   errors: [],
 };

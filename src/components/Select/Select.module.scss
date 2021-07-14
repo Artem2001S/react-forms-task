@@ -1,0 +1,9 @@
+@import 'scssVariables.scss';
+
+.SelectContainer {
+  width: 100%;
+}
+
+.Select {
+  @include defaultInputStyles();
+}

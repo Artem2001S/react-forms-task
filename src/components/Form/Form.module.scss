@@ -1,0 +1,32 @@
+@import 'scssVariables.scss';
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  & > * + * {
+    margin-top: 20px;
+  }
+}
+
+.FormContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: auto;
+
+  width: 100%;
+  max-width: 450px;
+  padding: 10px 20px;
+}
+
+.Title {
+  font-size: 30px;
+  color: $text-color-primary;
+  padding: 15px;
+}
