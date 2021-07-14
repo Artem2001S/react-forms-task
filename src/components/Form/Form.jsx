@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Input from 'components/Input/Input';
 import Select from 'components/Select/Select';
+import DatePicker from 'components/DatePicker/DatePicker';
 import classes from './Form.module.scss';
 
 const Form = ({ title, inputs, onSubmit, onInputChanged }) => {
@@ -30,6 +31,16 @@ const Form = ({ title, inputs, onSubmit, onInputChanged }) => {
                   values={input.values}
                   label={input.label}
                   onChange={onInputChanged}
+                />
+              );
+            case 'date':
+              return (
+                <DatePicker
+                  key={input.id}
+                  id={input.id}
+                  onChange={onInputChanged}
+                  value={input.value}
+                  label={input.label}
                 />
               );
             default:

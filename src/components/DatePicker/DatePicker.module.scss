@@ -1,0 +1,15 @@
+@import 'scssVariables.scss';
+
+.Label {
+  color: $text-color-primary;
+}
+
+.DatePicker {
+  @include defaultInputStyles();
+}
+
+.DatePickerContainer {
+  display: block;
+
+  width: 100%;
+}
