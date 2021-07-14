@@ -30,4 +30,4 @@ Select.propTypes = {
   values: PropTypes.arrayOf(PropTypes.string),
 };
 
-export default Select;
+export default React.memo(Select);

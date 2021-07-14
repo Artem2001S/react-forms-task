@@ -47,4 +47,4 @@ Form.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
 
-export default Form;
+export default React.memo(Form);
