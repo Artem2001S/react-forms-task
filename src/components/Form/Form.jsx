@@ -15,56 +15,27 @@ const Form = ({ title, inputs, onSubmit, onInputChanged }) => (
         switch (input.inputType) {
           case 'textField':
             return (
-              <Input
-                key={input.id}
-                id={input.id}
-                value={input.value}
-                label={input.label}
-                onChange={onInputChanged}
-              />
+              <Input key={input.id} {...input} onChange={onInputChanged} />
             );
           case 'select':
             return (
-              <Select
-                key={input.id}
-                id={input.id}
-                value={input.value}
-                values={input.values}
-                label={input.label}
-                onChange={onInputChanged}
-              />
+              <Select key={input.id} {...input} onChange={onInputChanged} />
             );
           case 'date':
             return (
-              <DatePicker
-                key={input.id}
-                id={input.id}
-                label={input.label}
-                value={input.value}
-                onChange={onInputChanged}
-              />
+              <DatePicker key={input.id} {...input} onChange={onInputChanged} />
             );
           case 'radio':
             return (
               <RadioButtons
                 key={input.id}
-                id={input.id}
-                value={input.value}
-                label={input.label}
-                values={input.values}
+                {...input}
                 onChange={onInputChanged}
               />
             );
           case 'checkbox':
             return (
-              <Checkboxes
-                key={input.id}
-                id={input.id}
-                values={input.values}
-                label={input.label}
-                selectedValues={input.selectedValues}
-                onChange={onInputChanged}
-              />
+              <Checkboxes key={input.id} {...input} onChange={onInputChanged} />
             );
           default:
             return null;

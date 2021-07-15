@@ -4,7 +4,7 @@ import { useInputChangeHandler } from 'hooks/useInputChangeHandler';
 import Label from 'components/Label/Label';
 import classes from './DatePicker.module.scss';
 
-const DatePicker = ({ id, value, label, onChange, ...attrs }) => {
+const DatePicker = ({ id, value, name, label, onChange }) => {
   const handleChange = useInputChangeHandler(onChange, id);
 
   return (
@@ -14,10 +14,9 @@ const DatePicker = ({ id, value, label, onChange, ...attrs }) => {
           className={classes.DatePicker}
           id={id}
           type="date"
-          name={id}
+          name={name}
           value={value}
           onChange={handleChange}
-          {...attrs}
         />
       </Label>
     </div>
@@ -27,6 +26,7 @@ const DatePicker = ({ id, value, label, onChange, ...attrs }) => {
 DatePicker.propTypes = {
   id: PropTypes.string,
   label: PropTypes.string,
+  name: PropTypes.string,
   value: PropTypes.string,
   onChange: PropTypes.func.isRequired,
 };

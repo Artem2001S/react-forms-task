@@ -4,7 +4,7 @@ import { useInputChangeHandler } from 'hooks/useInputChangeHandler';
 import classes from './Input.module.scss';
 import Label from 'components/Label/Label';
 
-const Input = ({ id, value, label, name, onChange, ...attrs }) => {
+const Input = ({ id, value, label, name, onChange }) => {
   const handleChange = useInputChangeHandler(onChange, id);
 
   return (
@@ -17,7 +17,6 @@ const Input = ({ id, value, label, name, onChange, ...attrs }) => {
           name={name}
           value={value}
           onChange={handleChange}
-          {...attrs}
         />
       </Label>
     </div>
@@ -26,6 +25,7 @@ const Input = ({ id, value, label, name, onChange, ...attrs }) => {
 
 Input.propTypes = {
   id: PropTypes.string,
+  name: PropTypes.string.isRequired,
   label: PropTypes.string,
   value: PropTypes.string,
   onChange: PropTypes.func.isRequired,

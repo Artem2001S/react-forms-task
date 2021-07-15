@@ -4,7 +4,7 @@ import classes from './Select.module.scss';
 import { useInputChangeHandler } from 'hooks/useInputChangeHandler';
 import Label from 'components/Label/Label';
 
-const Select = ({ id, value, values, label, onChange, ...attrs }) => {
+const Select = ({ id, value, values, label, onChange }) => {
   const handleChange = useInputChangeHandler(onChange, id);
 
   return (
