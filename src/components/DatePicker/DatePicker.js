@@ -1,12 +1,10 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import { useInputChangeHandler } from 'hooks/useInputChangeHandler';
 import classes from './DatePicker.module.scss';
 
 const DatePicker = ({ id, value, label, onChange, ...attrs }) => {
-  const handleChange = useCallback(
-    (e) => onChange(id, e.target.value),
-    [id, onChange]
-  );
+  const handleChange = useInputChangeHandler(onChange, id);
 
   return (
     <div className={classes.DatePickerContainer}>

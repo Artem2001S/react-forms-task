@@ -1,13 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useInputChangeHandler } from 'hooks/useInputChangeHandler';
 import classes from './CheckBox.module.scss';
-import { useCallback } from 'react';
 
 const CheckBox = ({ id, value, checked, onChange }) => {
-  const handleChange = useCallback(
-    (e) => onChange(id, e.target.value),
-    [id, onChange]
-  );
+  const handleChange = useInputChangeHandler(onChange, id);
 
   return (
     <div className={classes.CheckboxContainer}>
