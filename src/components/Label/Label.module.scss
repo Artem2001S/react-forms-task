@@ -1,0 +1,8 @@
+@import 'scssVariables.scss';
+
+.Label {
+  color: $text-color-primary;
+  padding-bottom: 10px;
+
+  cursor: pointer;
+}

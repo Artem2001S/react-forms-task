@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useInputChangeHandler } from 'hooks/useInputChangeHandler';
 import classes from './Input.module.scss';
+import Label from 'components/Label/Label';
 
 const Input = ({ id, value, label, name, onChange, ...attrs }) => {
   const handleChange = useInputChangeHandler(onChange, id);
 
   return (
     <div className={classes.InputContainer}>
-      <label htmlFor={id}>
-        {label && <div className={classes.Label}>{label}</div>}
+      <Label htmlFor={id} label={label}>
         <input
           className={classes.Input}
           id={id}
@@ -19,7 +19,7 @@ const Input = ({ id, value, label, name, onChange, ...attrs }) => {
           onChange={handleChange}
           {...attrs}
         />
-      </label>
+      </Label>
     </div>
   );
 };

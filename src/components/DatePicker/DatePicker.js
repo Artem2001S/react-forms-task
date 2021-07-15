@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useInputChangeHandler } from 'hooks/useInputChangeHandler';
+import Label from 'components/Label/Label';
 import classes from './DatePicker.module.scss';
 
 const DatePicker = ({ id, value, label, onChange, ...attrs }) => {
@@ -8,8 +9,7 @@ const DatePicker = ({ id, value, label, onChange, ...attrs }) => {
 
   return (
     <div className={classes.DatePickerContainer}>
-      <label htmlFor={id}>
-        {label && <div className={classes.Label}>{label}</div>}
+      <Label htmlFor={id} label={label}>
         <input
           className={classes.DatePicker}
           id={id}
@@ -19,7 +19,7 @@ const DatePicker = ({ id, value, label, onChange, ...attrs }) => {
           onChange={handleChange}
           {...attrs}
         />
-      </label>
+      </Label>
     </div>
   );
 };

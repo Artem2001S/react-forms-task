@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useInputChangeHandler } from 'hooks/useInputChangeHandler';
+import Label from 'components/Label/Label';
 import classes from './CheckBox.module.scss';
 
 const CheckBox = ({ id, value, checked, onChange }) => {
@@ -8,8 +9,7 @@ const CheckBox = ({ id, value, checked, onChange }) => {
 
   return (
     <div className={classes.CheckboxContainer}>
-      <label htmlFor={value}>
-        {value && <div className={classes.Label}>{value}</div>}
+      <Label htmlFor={value} label={value}>
         <input
           className={classes.CheckboxInput}
           id={value}
@@ -20,7 +20,7 @@ const CheckBox = ({ id, value, checked, onChange }) => {
           onChange={handleChange}
         />
         <span className={classes.Checkbox} />
-      </label>
+      </Label>
     </div>
   );
 };

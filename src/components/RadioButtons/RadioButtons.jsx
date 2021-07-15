@@ -9,7 +9,7 @@ const RadioButtons = ({ id, label, values, value, onChange }) => (
     <div className={classes.RadioButtons}>
       {values.map((radio) => (
         <RadioButton
-          key={radio}
+          key={id.concat(radio)}
           id={id}
           value={radio}
           checked={radio === value}

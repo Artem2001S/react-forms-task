@@ -29,8 +29,11 @@
   position: absolute;
   left: 0;
   top: 0;
+
   width: 20px;
   height: 20px;
+
+  cursor: pointer;
   border: 1px solid $text-color-primary;
   border-radius: 50%;
 }
