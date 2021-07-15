@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useInputChangeHandler } from 'hooks/useInputChangeHandler';
 import Label from 'components/Label/Label';
-import classes from './CheckBox.module.scss';
+import classes from './Checkbox.module.scss';
 
 const CheckBox = ({ id, value, checked, onChange }) => {
   const handleChange = useInputChangeHandler(onChange, id);

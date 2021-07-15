@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Input from 'components/Input/Input';
 import Select from 'components/Select/Select';
-import DatePicker from 'components/DatePicker/DatePicker';
-import classes from './Form.module.scss';
 import RadioButtons from 'components/RadioButtons/RadioButtons';
 import Checkboxes from 'components/Checkboxes/Checkboxes';
+import classes from './Form.module.scss';
+import DatePicker from 'components/DatePicker/DatePicker';
 
 const Form = ({ title, inputs, onSubmit, onInputChanged }) => (
   <div className={classes.FormContainer}>

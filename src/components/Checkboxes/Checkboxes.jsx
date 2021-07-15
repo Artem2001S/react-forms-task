@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classes from './Checkboxes.module.scss';
-import CheckBox from './CheckBox/CheckBox';
+import CheckBox from './Checkbox/Checkbox';
 
 const Checkboxes = ({ id, label, values, selectedValues, onChange }) => (
   <div className={classes.CheckBoxesContainer}>
