@@ -23,7 +23,7 @@ export const FormContainer = () => {
       title="Enter user information"
       inputs={inputs}
       onSubmit={handleFormSubmit}
-      onInputChanged={inputChangedHandler}
+      onInputChange={inputChangedHandler}
     />
   );
 };

@@ -6,41 +6,41 @@ import RadioButtons from 'components/RadioButtons/RadioButtons';
 import Checkboxes from 'components/Checkboxes/Checkboxes';
 import classes from './Form.module.scss';
 import DatePicker from 'components/DatePicker/DatePicker';
+import Button from 'components/Button/Button';
 
-const Form = ({ title, inputs, onSubmit, onInputChanged }) => (
+const Form = ({ title, inputs, onSubmit, onInputChange }) => (
   <div className={classes.FormContainer}>
     <div className={classes.Title}>{title}</div>
     <form className={classes.Form} onSubmit={onSubmit}>
       {inputs.map((input) => {
         switch (input.inputType) {
           case 'textField':
-            return (
-              <Input key={input.id} {...input} onChange={onInputChanged} />
-            );
+            return <Input key={input.id} {...input} onChange={onInputChange} />;
           case 'select':
             return (
-              <Select key={input.id} {...input} onChange={onInputChanged} />
+              <Select key={input.id} {...input} onChange={onInputChange} />
             );
           case 'date':
             return (
-              <DatePicker key={input.id} {...input} onChange={onInputChanged} />
+              <DatePicker key={input.id} {...input} onChange={onInputChange} />
             );
           case 'radio':
             return (
               <RadioButtons
                 key={input.id}
                 {...input}
-                onChange={onInputChanged}
+                onChange={onInputChange}
               />
             );
           case 'checkbox':
             return (
-              <Checkboxes key={input.id} {...input} onChange={onInputChanged} />
+              <Checkboxes key={input.id} {...input} onChange={onInputChange} />
             );
           default:
             return null;
         }
       })}
+      <Button>Print</Button>
     </form>
   </div>
 );
@@ -49,7 +49,7 @@ Form.propTypes = {
   title: PropTypes.string,
   inputs: PropTypes.array,
   onSubmit: PropTypes.func.isRequired,
-  onInputChanged: PropTypes.func.isRequired,
+  onInputChange: PropTypes.func.isRequired,
 };
 
 export default React.memo(Form);

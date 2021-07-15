@@ -8,6 +8,7 @@ const initialState = {
       inputType: 'textField',
       label: 'Name',
       value: '',
+      isRequired: true,
     },
     {
       id: nanoid(),
@@ -15,6 +16,7 @@ const initialState = {
       inputType: 'textField',
       label: 'Phone number',
       value: '',
+      isRequired: true,
     },
     {
       id: nanoid(),
@@ -22,13 +24,14 @@ const initialState = {
       inputType: 'textField',
       label: 'Email',
       value: '',
+      isRequired: true,
     },
     {
       id: nanoid(),
       name: 'city',
       inputType: 'select',
       value: '',
-      label: 'Choose city',
+      label: 'City',
       values: [
         'Moscow',
         'Tver',
@@ -46,14 +49,16 @@ const initialState = {
       inputType: 'date',
       label: 'Date of birth',
       value: '',
+      isRequired: true,
     },
     {
       id: nanoid(),
       name: 'gender',
-      label: 'Choose gender',
+      label: 'Gender',
       inputType: 'radio',
-      value: 'Male',
+      value: '',
       values: ['Male', 'Female'],
+      isRequired: true,
     },
     {
       id: nanoid(),

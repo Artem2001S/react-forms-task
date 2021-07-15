@@ -1,0 +1,12 @@
+.Button {
+  padding: 12px 45px;
+  border: 1px solid black;
+  background-color: transparent;
+  cursor: pointer;
+  text-transform: uppercase;
+
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: rgba($color: black, $alpha: 0.04);
+  }
+}
