@@ -1,0 +1,36 @@
+@import 'scssVariables.scss';
+
+.RadioButtonContainer {
+  position: relative;
+  padding-left: 25px;
+}
+
+.Label {
+  color: $text-color-primary;
+}
+
+.RadioButtonInput {
+  display: none;
+
+  &:checked + .RadioButton::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: $text-color-primary;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.RadioButton {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid $text-color-primary;
+  border-radius: 50%;
+}

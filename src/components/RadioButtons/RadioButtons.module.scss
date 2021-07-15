@@ -1,0 +1,18 @@
+@import 'scssVariables.scss';
+
+.RadioButtonsContainer {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.RadioButtons {
+  display: flex;
+  width: 100%;
+  gap: 15px;
+}
+
+.Label {
+  color: $text-color-primary;
+  margin-bottom: 10px;
+}
