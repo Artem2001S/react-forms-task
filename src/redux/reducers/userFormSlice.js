@@ -8,7 +8,9 @@ const initialState = {
       inputType: 'textField',
       label: 'Name',
       value: '',
-      isRequired: true,
+      validationData: {
+        isRequired: true,
+      },
     },
     {
       id: nanoid(),
@@ -16,7 +18,10 @@ const initialState = {
       inputType: 'textField',
       label: 'Phone number',
       value: '',
-      isRequired: true,
+      validationData: {
+        isRequired: true,
+        isPhone: true,
+      },
     },
     {
       id: nanoid(),
@@ -24,7 +29,10 @@ const initialState = {
       inputType: 'textField',
       label: 'Email',
       value: '',
-      isRequired: true,
+      validationData: {
+        isRequired: true,
+        isEmail: true,
+      },
     },
     {
       id: nanoid(),
@@ -49,7 +57,10 @@ const initialState = {
       inputType: 'date',
       label: 'Date of birth',
       value: '',
-      isRequired: true,
+      validationData: {
+        isRequired: true,
+        isDate: true,
+      },
     },
     {
       id: nanoid(),
@@ -58,7 +69,9 @@ const initialState = {
       inputType: 'radio',
       value: '',
       values: ['Male', 'Female'],
-      isRequired: true,
+      validationData: {
+        isRequired: true,
+      },
     },
     {
       id: nanoid(),
@@ -100,8 +113,11 @@ const formReducer = createSlice({
         input.value = payload.value;
       }
     },
+    getErrors: (state, { payload }) => {
+      state.errors = payload.errors;
+    },
   },
 });
 
 export default formReducer.reducer;
-export const { inputValueChanged } = formReducer.actions;
+export const { inputValueChanged, getErrors } = formReducer.actions;

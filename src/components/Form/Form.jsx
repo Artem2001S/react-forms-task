@@ -7,34 +7,54 @@ import Checkboxes from 'components/Checkboxes/Checkboxes';
 import classes from './Form.module.scss';
 import DatePicker from 'components/DatePicker/DatePicker';
 import Button from 'components/Button/Button';
+import Errors from 'components/Errors/Errors';
 
-const Form = ({ title, inputs, onSubmit, onInputChange }) => (
+const Form = ({ title, inputs, errors, onSubmit, onInputChange }) => (
   <div className={classes.FormContainer}>
     <div className={classes.Title}>{title}</div>
+    {errors.length > 0 && <Errors errors={errors} />}
     <form className={classes.Form} onSubmit={onSubmit}>
-      {inputs.map((input) => {
-        switch (input.inputType) {
+      {inputs.map(({ inputType, validationData, ...inputData }) => {
+        switch (inputType) {
           case 'textField':
-            return <Input key={input.id} {...input} onChange={onInputChange} />;
+            return (
+              <Input
+                key={inputData.id}
+                {...inputData}
+                onChange={onInputChange}
+              />
+            );
           case 'select':
             return (
-              <Select key={input.id} {...input} onChange={onInputChange} />
+              <Select
+                key={inputData.id}
+                {...inputData}
+                onChange={onInputChange}
+              />
             );
           case 'date':
             return (
-              <DatePicker key={input.id} {...input} onChange={onInputChange} />
+              <DatePicker
+                key={inputData.id}
+                {...inputData}
+                onChange={onInputChange}
+              />
             );
           case 'radio':
             return (
               <RadioButtons
-                key={input.id}
-                {...input}
+                key={inputData.id}
+                {...inputData}
                 onChange={onInputChange}
               />
             );
           case 'checkbox':
             return (
-              <Checkboxes key={input.id} {...input} onChange={onInputChange} />
+              <Checkboxes
+                key={inputData.id}
+                {...inputData}
+                onChange={onInputChange}
+              />
             );
           default:
             return null;
@@ -48,6 +68,7 @@ const Form = ({ title, inputs, onSubmit, onInputChange }) => (
 Form.propTypes = {
   title: PropTypes.string,
   inputs: PropTypes.array,
+  errors: PropTypes.array,
   onSubmit: PropTypes.func.isRequired,
   onInputChange: PropTypes.func.isRequired,
 };
