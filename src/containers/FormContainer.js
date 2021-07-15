@@ -12,10 +12,8 @@ export const FormContainer = () => {
   }, []);
 
   const inputChangedHandler = useCallback(
-    (e) => {
-      dispatch(
-        inputValueChanged({ inputId: e.target.name, value: e.target.value })
-      );
+    (id, value) => {
+      dispatch(inputValueChanged({ inputId: id, value }));
     },
     [dispatch]
   );

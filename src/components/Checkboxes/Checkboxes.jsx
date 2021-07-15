@@ -9,7 +9,7 @@ const Checkboxes = ({ id, label, values, selectedValues, onChange }) => (
     <div className={classes.Checkboxes}>
       {values.map((checkbox) => (
         <CheckBox
-          key={checkbox}
+          key={id.concat(checkbox)}
           id={id}
           value={checkbox}
           checked={selectedValues.includes(checkbox)}

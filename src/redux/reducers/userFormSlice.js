@@ -1,27 +1,31 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, nanoid } from '@reduxjs/toolkit';
 
 const initialState = {
   inputs: [
     {
-      id: 'name',
+      id: nanoid(),
+      name: 'name',
       inputType: 'textField',
       label: 'Name',
       value: '',
     },
     {
-      id: 'phone',
+      id: nanoid(),
+      name: 'phone',
       inputType: 'textField',
       label: 'Phone number',
       value: '',
     },
     {
-      id: 'email',
+      id: nanoid(),
+      name: 'email',
       inputType: 'textField',
       label: 'Email',
       value: '',
     },
     {
-      id: 'city',
+      id: nanoid(),
+      name: 'city',
       inputType: 'select',
       value: '',
       label: 'Choose city',
@@ -36,16 +40,24 @@ const initialState = {
         'Another',
       ],
     },
-    { id: 'dateOfBirth', inputType: 'date', label: 'Date of birth', value: '' },
     {
-      id: 'gender',
+      id: nanoid(),
+      name: 'dateOfBirth',
+      inputType: 'date',
+      label: 'Date of birth',
+      value: '',
+    },
+    {
+      id: nanoid(),
+      name: 'gender',
       label: 'Choose gender',
       inputType: 'radio',
       value: 'Male',
       values: ['Male', 'Female'],
     },
     {
-      id: 'skills',
+      id: nanoid(),
+      name: 'skills',
       inputType: 'checkbox',
       label: 'Select your skills',
       selectedValues: [],
