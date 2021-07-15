@@ -70,7 +70,18 @@ const formReducer = createSlice({
     inputValueChanged: (state, { payload }) => {
       const { inputId } = payload;
       const input = state.inputs.find((input) => input.id === inputId);
-      input.value = payload.value;
+
+      if (input.inputType === 'checkbox') {
+        if (input.selectedValues.includes(payload.value)) {
+          input.selectedValues = input.selectedValues.filter(
+            (value) => value !== payload.value
+          );
+        } else {
+          input.selectedValues.push(payload.value);
+        }
+      } else {
+        input.value = payload.value;
+      }
     },
   },
 });

@@ -1,0 +1,18 @@
+@import 'scssVariables.scss';
+
+.CheckBoxesContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.Checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Label {
+  color: $text-color-primary;
+  padding-bottom: 10px;
+}

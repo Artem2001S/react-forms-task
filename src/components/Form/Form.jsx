@@ -5,6 +5,7 @@ import Select from 'components/Select/Select';
 import DatePicker from 'components/DatePicker/DatePicker';
 import classes from './Form.module.scss';
 import RadioButtons from 'components/RadioButtons/RadioButtons';
+import Checkboxes from 'components/Checkboxes/Checkboxes';
 
 const Form = ({ title, inputs, onSubmit, onInputChanged }) => (
   <div className={classes.FormContainer}>
@@ -51,6 +52,17 @@ const Form = ({ title, inputs, onSubmit, onInputChanged }) => (
                 value={input.value}
                 label={input.label}
                 values={input.values}
+                onChange={onInputChanged}
+              />
+            );
+          case 'checkbox':
+            return (
+              <Checkboxes
+                key={input.id}
+                id={input.id}
+                values={input.values}
+                label={input.label}
+                selectedValues={input.selectedValues}
                 onChange={onInputChanged}
               />
             );
