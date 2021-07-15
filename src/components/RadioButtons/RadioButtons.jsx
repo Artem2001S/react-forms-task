@@ -32,7 +32,7 @@ RadioButtons.propTypes = {
   label: PropTypes.string,
   value: PropTypes.string,
   values: PropTypes.array,
-  onChange: PropTypes.func,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default React.memo(RadioButtons);

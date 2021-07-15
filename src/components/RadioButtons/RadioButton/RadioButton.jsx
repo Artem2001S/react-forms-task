@@ -24,7 +24,7 @@ RadioButton.propTypes = {
   id: PropTypes.string,
   value: PropTypes.string,
   checked: PropTypes.bool,
-  onChange: PropTypes.func,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default React.memo(RadioButton);

@@ -30,6 +30,7 @@ Input.propTypes = {
   id: PropTypes.string,
   label: PropTypes.string,
   value: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default React.memo(Input);

@@ -78,6 +78,7 @@ Form.propTypes = {
   title: PropTypes.string,
   inputs: PropTypes.array,
   onSubmit: PropTypes.func.isRequired,
+  onInputChanged: PropTypes.func.isRequired,
 };
 
 export default React.memo(Form);

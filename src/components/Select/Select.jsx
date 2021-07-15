@@ -35,6 +35,7 @@ Select.propTypes = {
   value: PropTypes.string,
   label: PropTypes.string,
   values: PropTypes.arrayOf(PropTypes.string),
+  onChange: PropTypes.func.isRequired,
 };
 
 export default React.memo(Select);
