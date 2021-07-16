@@ -7,7 +7,7 @@ import PrintValue from './PrintValue/PrintValue';
 const PrintForm = ({ inputs }) => {
   return (
     <div className={classes.PrintForm}>
-      <Title title="Print user information" />
+      <Title title="User information" />
       {inputs.map(({ label, value, selectedValues }, index) => (
         <PrintValue
           key={index}

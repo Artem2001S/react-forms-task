@@ -5,7 +5,9 @@ import PrintFormContainer from 'containers/PrintFormContainer';
 function App() {
   return (
     <div className="App">
-      <FormContainer />
+      <div className="no-print">
+        <FormContainer />
+      </div>
       <PrintFormContainer />
     </div>
   );
