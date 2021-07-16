@@ -8,10 +8,11 @@ import classes from './Form.module.scss';
 import DatePicker from 'components/DatePicker/DatePicker';
 import Button from 'components/Button/Button';
 import Errors from 'components/Errors/Errors';
+import Title from 'components/Title/Title';
 
 const Form = ({ title, inputs, errors, onSubmit, onInputChange }) => (
   <div className={classes.FormContainer}>
-    <div className={classes.Title}>{title}</div>
+    <Title title={title} />
     {errors.length > 0 && <Errors errors={errors} />}
     <form className={classes.Form} onSubmit={onSubmit}>
       {inputs.map(({ inputType, validationData, ...inputData }) => {

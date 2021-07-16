@@ -41,6 +41,7 @@ const initialState = {
       value: '',
       label: 'City',
       values: [
+        '',
         'Moscow',
         'Tver',
         'Saint Petersburg',
@@ -50,6 +51,10 @@ const initialState = {
         'Voronezh',
         'Another',
       ],
+      validationData: {
+        isRequired: true,
+        isEmail: true,
+      },
     },
     {
       id: nanoid(),
@@ -77,7 +82,7 @@ const initialState = {
       id: nanoid(),
       name: 'skills',
       inputType: 'checkbox',
-      label: 'Select your skills',
+      label: 'Your skills',
       selectedValues: [],
       values: [
         'HTML',

@@ -10,3 +10,8 @@ body {
   margin: 0;
   font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.App {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

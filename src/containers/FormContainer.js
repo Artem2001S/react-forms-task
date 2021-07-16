@@ -4,7 +4,7 @@ import { inputValueChanged, getErrors } from 'redux/reducers/userFormSlice';
 import { validateInputs } from 'utils/formValidation';
 import Form from 'components/Form/Form';
 
-export const FormContainer = () => {
+const FormContainer = () => {
   const inputs = useSelector((state) => state.userForm.inputs);
   const errors = useSelector((state) => state.userForm.errors);
   const dispatch = useDispatch();
@@ -12,7 +12,12 @@ export const FormContainer = () => {
   const handleFormSubmit = useCallback(
     (e) => {
       e.preventDefault();
-      dispatch(getErrors({ errors: validateInputs(inputs) }));
+      const errors = validateInputs(inputs);
+      dispatch(getErrors({ errors }));
+
+      if (!errors.length) {
+        window.print();
+      }
     },
     [dispatch, inputs]
   );
@@ -34,3 +39,5 @@ export const FormContainer = () => {
     />
   );
 };
+
+export default React.memo(FormContainer);
