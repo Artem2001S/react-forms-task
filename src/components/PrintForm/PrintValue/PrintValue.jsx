@@ -3,15 +3,13 @@ import PropTypes from 'prop-types';
 import Label from 'components/Label/Label';
 import classes from './PrintValue.module.scss';
 
-const PrintValue = ({ value, label, selectedValues }) => {
-  return (
-    <div className={classes.Value}>
-      <Label label={label}>
-        <strong>{value || selectedValues?.join(', ') || 'No value'}</strong>
-      </Label>
-    </div>
-  );
-};
+const PrintValue = ({ value, label, selectedValues }) => (
+  <div className={classes.Value}>
+    <Label label={label}>
+      <strong>{value || selectedValues?.join(', ') || 'No value'}</strong>
+    </Label>
+  </div>
+);
 
 PrintValue.propTypes = {
   value: PropTypes.string,
