@@ -1,7 +1,6 @@
-# Getting Started with Create React App
+# react-forms-task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+Open [https://react-forms-task3333.netlify.app/](https://react-forms-task3333.netlify.app/)
 ## Available Scripts
 
 In the project directory, you can run:
