@@ -6,6 +6,9 @@ const emailRegexp =
 
 const phoneRegexp = /^\+?[78][-(]?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$/;
 
+//https://stackoverflow.com/questions/22061723/regex-date-validation-for-yyyy-mm-dd
+const dateRegexp = /^\d{4}-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$/;
+
 export const validateInputs = (inputs) => {
   const errors = [];
 
@@ -32,6 +35,14 @@ export const validateInputs = (inputs) => {
         errors.push(
           'Invalid phone number. Example of the phone number format: 89103123167, +7-910-221-22-22,+7(910)-221-22-22 etc.'
         );
+      return;
+    }
+
+    if (validationData.isDate) {
+      const isDateCorrect = testRegexp(value, dateRegexp);
+
+      !isDateCorrect &&
+        errors.push('Invalid date. Example of the date format: YYYY-MM-DD');
       return;
     }
   });
