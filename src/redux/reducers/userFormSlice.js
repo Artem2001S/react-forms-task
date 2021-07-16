@@ -99,8 +99,10 @@ const initialState = {
 };
 
 const name = 'userForm';
-const preLoadedState =
-  { ...getFromLocalStorage(name), errors: [] } || initialState;
+const localStorageData = getFromLocalStorage(name);
+const preLoadedState = localStorageData
+  ? { ...localStorageData, errors: [] }
+  : initialState;
 
 const formReducer = createSlice({
   initialState: preLoadedState,
