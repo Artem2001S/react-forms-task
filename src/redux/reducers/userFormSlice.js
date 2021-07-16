@@ -53,7 +53,6 @@ const initialState = {
       ],
       validationData: {
         isRequired: true,
-        isEmail: true,
       },
     },
     {
