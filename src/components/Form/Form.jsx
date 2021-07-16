@@ -14,7 +14,7 @@ const Form = ({ title, inputs, errors, onSubmit, onInputChange }) => (
   <div className={classes.FormContainer}>
     <Title title={title} />
     {errors.length > 0 && <Errors errors={errors} />}
-    <form className={classes.Form} onSubmit={onSubmit}>
+    <form className={classes.Form} noValidate onSubmit={onSubmit}>
       {inputs.map(({ inputType, validationData, ...inputData }) => {
         switch (inputType) {
           case 'textField':
