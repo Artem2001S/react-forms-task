@@ -4,11 +4,11 @@ import Input from 'components/Input/Input';
 import Select from 'components/Select/Select';
 import RadioButtons from 'components/RadioButtons/RadioButtons';
 import Checkboxes from 'components/Checkboxes/Checkboxes';
-import classes from './Form.module.scss';
 import DatePicker from 'components/DatePicker/DatePicker';
 import Button from 'components/Button/Button';
 import Errors from 'components/Errors/Errors';
 import Title from 'components/Title/Title';
+import classes from './Form.module.scss';
 
 const Form = ({ title, inputs, errors, onSubmit, onInputChange }) => (
   <div className={classes.FormContainer}>

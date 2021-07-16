@@ -1,4 +1,5 @@
 import { createSlice, nanoid } from '@reduxjs/toolkit';
+import { getFromLocalStorage } from 'redux/localStorage';
 
 const initialState = {
   inputs: [
@@ -97,9 +98,12 @@ const initialState = {
   errors: [],
 };
 
+const name = 'userForm';
+const preLoadedState = getFromLocalStorage(name) || initialState;
+
 const formReducer = createSlice({
-  initialState,
-  name: 'userForm',
+  initialState: preLoadedState,
+  name,
   reducers: {
     inputValueChanged: (state, { payload }) => {
       const { inputId } = payload;

@@ -14,6 +14,6 @@ const Error = ({ errors }) => {
   );
 };
 
-Error.propTypes = { errorMessage: PropTypes.string };
+Error.propTypes = { errors: PropTypes.arrayOf(PropTypes.string) };
 
 export default React.memo(Error);

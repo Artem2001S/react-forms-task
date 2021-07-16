@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useInputChangeHandler } from 'hooks/useInputChangeHandler';
-import classes from './Input.module.scss';
 import Label from 'components/Label/Label';
+import classes from './Input.module.scss';
 
 const Input = ({ id, value, label, name, onChange }) => {
   const handleChange = useInputChangeHandler(onChange, id);
@@ -25,9 +25,9 @@ const Input = ({ id, value, label, name, onChange }) => {
 
 Input.propTypes = {
   id: PropTypes.string,
+  value: PropTypes.string,
   name: PropTypes.string.isRequired,
   label: PropTypes.string,
-  value: PropTypes.string,
   onChange: PropTypes.func.isRequired,
 };
 
